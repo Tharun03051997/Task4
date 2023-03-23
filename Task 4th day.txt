@@ -1,0 +1,74 @@
+1 . How to Compare two JSON have the same properties without order?
+
+let obj1 = {name: "Person1", age:5};
+let obj2 = {age 5, name: "person 1"};
+
+
+let obj1 = {name: "Person 1", age:5};
+let obj2 = {age:5, name: "person 1"};
+
+
+console.log(isEqual(obj1, obj2));
+function isEqual(a,b){
+    var parameter1 = Object.keys(a);
+    var parameter2 = Object.keys(b);
+    if(parameter1.length!=parameter2.length)
+    {
+        return false;
+    }
+    for(var userkey of parameter1)
+    {
+        if(obj1.userkey!=obj2.usekey)
+        {
+            return false;
+        }
+    else{
+        return true;
+    }
+}}
+
+-------------------------------------------------------------------------------------------------------------------
+2. Use the rest countries API URL https://restcountries.com/v3.1/all and display all the country flags in the console.
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET','https://restcountries.com/v3.1/all');
+xhr.responseType = 'json';
+xhr.send();
+
+xhr.onload = function () {
+    for(var i =0; i<xhr.response.length; i++)
+    {
+        console.log(xhr.response[i].flags);
+    }
+}
+    
+--------------------------------------------------------------------------------------------------------------------------------------
+3. Use the same rest countries and print all countries names, regions, sub-region and population
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET','https://restcountries.com/v3.1/all');
+xhr.responseType = 'json';
+xhr.send();
+
+xhr.onload = function () {
+    for(var i =0; i<xhr.response.length; i++)
+    {
+        console.log(xhr.response[i].name);
+    }
+    for(var i =0; i<xhr.response.length; i++)
+    {
+        console.log(xhr.response[i].region);
+    }
+    for(var i =0; i<xhr.response.length; i++)
+    {
+        console.log(xhr.response[i].subregion);
+    }
+    for(var i =0; i<xhr.response.length; i++)
+    {
+        console.log(xhr.response[i].population);
+    }
+}
+
+    
+
+
